@@ -34,7 +34,7 @@ public class User {
 	// design.
 	@ManyToMany
 	@JoinTable(name = "users_phones", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "phone_id"))
-	@JsonManagedReference
+	@JsonManagedReference //bidirectionl Many to Many binding on jackson requires config 
 	private Set<Phone> phones;
 
 	protected User() {
