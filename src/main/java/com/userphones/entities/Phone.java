@@ -22,7 +22,7 @@ public class Phone {
 	@JsonIgnore
 	private int id;
 
-	@Column(name = "phone_number")
+	@Column(name = "phone_number", nullable = false)
 	private String number;
 
 	@Column(name = "description")
