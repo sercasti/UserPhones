@@ -6,7 +6,8 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.8.xsd">
 
 	<changeSet id="1" author="sercasti">
-		<preConditions>
+		<preConditions onFail="CONTINUE">
+			<dbms type="mysql" />
 			<columnExists schemaName="userPhone" tableName="users"
 				columnName="phone" />
 		</preConditions>
@@ -32,8 +33,6 @@
 			FROM users us, phones ph
 			where us.phone = ph.phone_number;
 		</sql>
-		<dropColumn 
-            columnName="phone"
-            tableName="users"/>
+		<dropColumn columnName="phone" tableName="users" />
 	</changeSet>
 </databaseChangeLog>

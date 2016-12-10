@@ -60,9 +60,7 @@ public class UserDataObjectSet {
 	}
 
 	private static Phone getRandomPhone(int index) {
-		Phone phone = new Phone();
-		phone.setNumber(getRandomPhoneNumber());
-		phone.setDescription(getRandomDescription(index));
+		Phone phone = new Phone(getRandomPhoneNumber(), getRandomDescription(index));
 		phoneDao.save(phone);
 		return phone;
 	}

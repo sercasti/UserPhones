@@ -31,6 +31,15 @@ public class Phone {
 	@ManyToMany(mappedBy = "phones")
 	@JsonBackReference
 	private Set<User> users;
+	
+	protected Phone(){
+	}
+	
+	public Phone(String number, String description) {
+		super();
+		this.number = number;
+		this.description = description;
+	}
 
 	public int getId() {
 		return id;
